@@ -1,0 +1,85 @@
+public class MobilRemoteControl {
+    public static void main(String[] args) {
+        Mobil mobil = new Mobil();
+        
+        // Menghidupkan mobil
+        mobil.hidupkan();
+        
+        // Menggerakkan mobil maju
+        mobil.gerakMaju();
+        
+        // Menggerakkan mobil mundur
+        mobil.gerakMundur();
+        
+        // Menggerakkan mobil ke kanan
+        mobil.gerakKanan();
+        
+        // Menggerakkan mobil ke kiri
+        mobil.gerakKiri();
+        
+        // Mematikan mobil
+        mobil.matikan();
+    }
+}
+
+class Mobil {
+    private boolean hidup = false;
+    private boolean maju = false;
+    private boolean mundur = false;
+    private boolean kanan = false;
+    private boolean kiri = false;
+    
+    public void hidupkan() {
+        hidup = true;
+        System.out.println("Mobil dinyalakan");
+    }
+    
+    public void matikan() {
+        hidup = false;
+        maju = false;
+        mundur = false;
+        kanan = false;
+        kiri = false;
+        System.out.println("Mobil dimatikan");
+    }
+    
+    public void gerakMaju() {
+        if (hidup) {
+            maju = true;
+            mundur = false;
+            System.out.println("Mobil bergerak maju");
+        } else {
+            System.out.println("Mobil harus dinyalakan terlebih dahulu");
+        }
+    }
+    
+    public void gerakMundur() {
+        if (hidup) {
+            mundur = true;
+            maju = false;
+            System.out.println("Mobil bergerak mundur");
+        } else {
+            System.out.println("Mobil harus dinyalakan terlebih dahulu");
+        }
+    }
+    
+    public void gerakKanan() {
+        if (hidup) {
+            kanan = true;
+            kiri = false;
+            System.out.println("Mobil bergerak ke kanan");
+        } else {
+            System.out.println("Mobil harus dinyalakan terlebih dahulu");
+        }
+    }
+    
+    public void gerakKiri() {
+        if (hidup) {
+            kiri = true;
+            kanan = false;
+            System.out.println("Mobil bergerak ke kiri");
+        } else {
+            System.out.println("Mobil harus dinyalakan terlebih dahulu");
+        }
+    }
+}

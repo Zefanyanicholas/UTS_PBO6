@@ -1,0 +1,34 @@
+public class RecursiveExample {
+    public static void main(String[] args) {
+        // contoh pemanggilan rekursif pada method factorial
+        int num = 5;
+        int factorial = factorial(num);
+        System.out.println(num + "! = " + factorial);
+        
+        // contoh pemanggilan rekursif pada method fibonacci
+        int n = 10;
+        for (int i = 0; i < n; i++) {
+            System.out.print(fibonacci(i) + " ");
+        }
+    }
+    
+    // method rekursif untuk menghitung faktorial
+    public static int factorial(int n) {
+        if (n == 0) {
+            return 1;
+        } else {
+            return n * factorial(n-1);
+        }
+    }
+    
+    // method rekursif untuk menghitung bilangan fibonacci
+    public static int fibonacci(int n) {
+        if (n == 0) {
+            return 0;
+        } else if (n == 1) {
+            return 1;
+        } else {
+            return fibonacci(n-1) + fibonacci(n-2);
+        }
+    }
+}
